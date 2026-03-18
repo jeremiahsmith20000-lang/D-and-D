@@ -1,0 +1,1 @@
+{\n  "name": "dnd-ai-dungeon-master",\n  "version": "1.0.0",\n  "description": "A D&D AI Dungeon Master application",\n  "main": "index.js",\n  "scripts": {\n    "start": "node index.js"\n  },\n  "dependencies": {\n    "express": "^4.17.1",\n    "openai": "^3.1.0",\n    "game-logic": "^1.0.0"\n  }\n}
