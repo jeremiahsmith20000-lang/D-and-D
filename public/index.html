@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI D&D Dungeon Master</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Character Creation Screen -->
+    <div id="character-creation" class="screen">
+      <div class="container">
+        <h1>⚔️ Create Your Character</h1>
+        
+        <form id="char-form">
+          <div class="form-group">
+            <label for="name">Character Name:</label>
+            <input type="text" id="name" name="name" required placeholder="Enter your hero's name">
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="gender">Gender:</label>
+              <select id="gender" name="gender" required>
+                <option value="">Select Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Non-binary">Non-binary</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="race">Race:</label>
+              <select id="race" name="race" required>
+                <option value="">Select Race</option>
+                <option value="Human">Human</option>
+                <option value="Elf">Elf</option>
+                <option value="Dwarf">Dwarf</option>
+                <option value="Halfling">Halfling</option>
+                <option value="Orc">Orc</option>
+                <option value="Tiefling">Tiefling</option>
+                <option value="Dragonborn">Dragonborn</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="class">Class:</label>
+              <select id="class" name="class" required>
+                <option value="">Select Class</option>
+                <option value="Warrior">Warrior</option>
+                <option value="Mage">Mage</option>
+                <option value="Rogue">Rogue</option>
+                <option value="Cleric">Cleric</option>
+                <option value="Ranger">Ranger</option>
+                <option value="Paladin">Paladin</option>
+                <option value="Bard">Bard</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="appearance">Appearance:</label>
+            <textarea id="appearance" name="appearance" required placeholder="Describe your character's appearance (hair, eyes, build, scars, etc.)"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="backstory">Backstory:</label>
+            <textarea id="backstory" name="backstory" placeholder="Share your character's background and motivation"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Begin Your Adventure!</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Game Screen -->
+    <div id="game-screen" class="screen hidden">
+      <div class="container">
+        <div class="game-header">
+          <h2 id="char-name">Character Name</h2>
+          <div class="char-stats">
+            <span>Level: <span id="level">1</span></span>
+            <span>Health: <span id="health">100</span>/100</span>
+            <span>XP: <span id="xp">0</span></span>
+          </div>
+        </div>
+
+        <div class="game-content">
+          <div class="scene-description">
+            <h3>Scene</h3>
+            <div id="scene" class="text-area"></div>
+          </div>
+
+          <div class="game-log">
+            <h3>Adventure Log</h3>
+            <div id="log" class="text-area"></div>
+          </div>
+        </div>
+
+        <div class="action-input">
+          <input type="text" id="action-input" placeholder="What do you do?" autocomplete="off">
+          <button id="action-btn" class="btn btn-primary">Take Action</button>
+        </div>
+
+        <button id="new-game-btn" class="btn btn-secondary">New Character</button>
+      </div>
+    </div>
+
+    <!-- Loading Indicator -->
+    <div id="loading" class="loading hidden">
+      <div class="spinner"></div>
+      <p>The Dungeon Master contemplates your actions...</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
